@@ -1,0 +1,22 @@
+page-by-artist {
+    .artist-entry {
+        height: 50vw;
+        padding: 0px;
+
+        ion-label {
+            height: 100%;
+            margin: 0px;
+        }
+
+        .item-inner {
+            padding: 0px !important;
+        }
+
+        button {
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-color: red;
+        }
+    }
+}

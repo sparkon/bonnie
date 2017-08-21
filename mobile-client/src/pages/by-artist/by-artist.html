@@ -1,0 +1,8 @@
+<ion-content>
+   <ion-list [virtualScroll]='page.artist_views' approxItemHeight='200px' no-lines>
+      <ion-item *virtualItem='let view' style='width: 100%' class='artist-entry'>
+        <button float-left clear full>{{ view[0].artist }}</button>
+        <button *ngIf='view[1] != null' float-left clear full>{{ view[1].artist }}</button>
+      </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,42 @@
+page-home {
+    // [Find Public Streamers]
+    .control-content {
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    // [Invite]
+    // [Scan QR Code]
+    .control-footer {
+        margin: 0 auto; 
+        padding: 0;
+    }
+
+    .wait-spinner {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    // Streamer entry
+    .entry {
+        padding-left: 0px;
+        padding-bottom: 1px;
+
+        .item-inner {
+            padding-left: 5px;
+            max-height: 64px;
+        }
+
+        ion-thumbnail {
+            margin: 0 auto !important;
+            min-width: 64px !important;
+            min-height: 64px !important;
+
+            img {
+                width: 64px !important;
+                height: 64px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "BonnieDev",
+  "productName": "BonnieDev",
+  "version": "0.1.0",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^1.7.4",
+    "electron-prebuilt": "^1.4.13",
+    "electron-rebuild": "^1.5.11",
+    "fs": "0.0.1-security",
+    "glob": "^7.1.2",
+    "glob-promise": "^3.1.0",
+    "mz": "^2.6.0"
+  },
+  "dependencies": {
+    "child-process-promise": "^2.2.1",
+    "electron-json-storage": "^3.0.7",
+    "electron-settings": "^3.1.1",
+    "jsmediatags": "^3.6.1",
+    "mp3-duration": "^1.0.10",
+    "musicmetadata": "^2.0.5"
+  }
+}

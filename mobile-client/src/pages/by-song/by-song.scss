@@ -1,0 +1,50 @@
+page-by-song {
+    ion-item {
+        padding-left: 0px !important; 
+        height: 64px; 
+        padding-right: 0px !important;
+
+        div {
+            padding-right: 0px !important;
+        }
+
+        ion-thumbnail {
+            margin: 0px 5px 0px 0px !important;
+            min-width: 64px !important;
+            height:64px !important;
+
+            img {
+                margin-top: 8px !important;
+                max-width: 64px;
+                max-height: 64px;
+            }
+        }
+    }
+
+    .overflow-ellipsis {
+        overflow:hidden;
+        display:inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .title {
+        font-weight: 500; 
+        font-size: 20px;
+    }
+
+    .artist {
+        clear: left;
+        font-size: 88%; 
+        color:grey;
+    }
+
+    .schedule-control {
+        max-width: 64px;
+        button {
+            background-color: transparent !important;
+            box-shadow: none;
+            color: black;
+        }
+    }
+}

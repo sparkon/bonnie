@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bonnie Streamer</title>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vanilla-notify.css">
+    <link rel="stylesheet" href="css/streamer.css">
+
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>if (window.module) module = window.module;</script>
+
+</head>
+<body style="width: 100%; height: 100%;">
+    <div class="main-container">
+        <div class="left-container">
+
+            <div class="left-content">
+                <table id="files-table" class="files-table">
+                    <tbody id="directory-ls">
+                        <tr class="dir-tr"><td>
+                            <div class="dir-tr-add" onclick="on_add_directory()">
+                                +
+                            </div>
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="side-menu" class="right-container">
+
+            <div class="right-header">
+                <div class="h-avatar">
+                    <img id="avatar" class="avatar" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png">
+                    <div id="avatar-wait">
+                        <div class="spinner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </div>
+                    <div class="avatar_icon" onclick="on_avatar_edit()">
+                        <div class="avatar_icon_inner">
+                            <i class="fa fa-picture-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-name-desc">
+                    <div class="h-name">
+                        <span class="h-name-span" >
+                            <div id="name-wait">
+                                <div class="spinner">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
+                            </div>
+                            <span id="name" class="edit-f" onclick="on_name_edit_click()">Name</span>
+                        </span>
+                    </div>
+                    <div id="h-desc" class="h-desc">
+                        <div id="desc-wait">
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                        <span id="desc" class="edit-f neo-f" onclick="on_desc_edit_click()">Insert a description</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-content">
+                <div class="access-selector">
+                    <ul class="access-list">
+                        <li>
+                            <input id="private-access" type="radio" name="access" value="private">
+                            <label for="private-access">Private</label>
+                        </li>
+                        <li>
+                            <input id="protected-access" type="radio" name="access" value="protected">
+                            <label for="protected-access">Protected</label>
+                        </li>
+                        <li>
+                            <input id="public-access" type="radio" name="access" value="public">
+                            <label for="public-access">Public</label>
+                        </li>
+                    </ul>
+                    <div class="access-content">
+                        <div id="access-desc">
+                        </div>
+                        <div id="qr-panel" class="access-panel">
+                            <div class="state-h">
+                                <span>QR CODE</span>
+                            </div>
+                            <div id="qr" class="state-f">
+                            </div>
+                        </div>
+                        <div id="invite-code-panel" class="access-panel">
+                            <div class="state-h">
+                                <span id="code">INVITE CODE</span>
+                            </div>
+                            <div class="state-f">
+                                <span id="invite-code">1234567890-qweasd-0011xxxx</span>
+                            </div>
+                        </div>
+                        <div id="access-wait">
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-footer">
+                <div class="foot-net-state">
+                    <span class="foot-net-state-h">State:</span>
+                    <span id="state-label" class="foot-net-state-f">Offline<img width="16px" src="https://image.flaticon.com/icons/svg/148/148766.svg"></span>
+                </div>
+                <div class="foot-net-set">
+                    <button id="start" onclick="on_start()">START <i class="fa fa-play" aria-hidden="true"></i> </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/lib/vanilla-notify.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/peer.js"></script>
+    <script src="js/qrcode.js"></script>
+    <script src="js/net/hub-protocol.js"></script>
+    <script src="js/net/streamer-protocol.js"></script>
+    <script src="js/net/utils.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/streamer.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

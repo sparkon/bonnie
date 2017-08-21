@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-row>
+    <ion-title text-center>
+      {{ streamer_info.name }}
+      <p class='subtitle'>{{ streamer_info.desc }} </p>
+    </ion-title>
+    <button ion-button icon-only class="settings-control">
+      <ion-icon name="settings"></ion-icon>
+    </button>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <super-tabs>
+    <super-tab [root]="by_song" [rootParams]='{page:this}' title='SONGS'></super-tab>
+    <super-tab [root]="by_artist" [rootParams]='{page:this}' title='ARTISTS'></super-tab>
+    <super-tab [root]="by_album" [rootParams]='{page:this}' title='ALBUMS'></super-tab>
+  </super-tabs>
+</ion-content>
+
+<ion-footer no-border id='playbar-full' class='footer'>
+  <ion-row class="playbar-progress" (click)='onSeek($event)'>
+      <div id="playbar"></div>
+  </ion-row>
+  <ion-row [ngClass]="music_player.isQueueEmpty() ? 'hide' : ''">
+      <div class="playbar-icon" float-left>
+      </div>
+      <div float-left class='playbar-middle'>
+        <div class="playbar-title">
+          {{ music_player.isQueueEmpty() ? '' : music_player.queue[0].title }}
+        </div>
+        <div class="playbar-subtitle">
+          {{ music_player.isQueueEmpty() ? '' : music_player.queue[0].artist }} - {{ music_player.isQueueEmpty() ? '' : music_player.queue[0].album }}
+        </div>
+      </div>
+      <div float-right>
+        <button  ion-button class="playbar-control" disabled>
+          <ion-icon name="skip-backward"></ion-icon>
+        </button>
+        <button *ngIf='music_player.isPaused()' ion-button class="playbar-control" (click)='music_player.resume()'>
+          <ion-icon name="play"></ion-icon>
+        </button>
+        <button *ngIf='!music_player.isPaused()' ion-button class="playbar-control" (click)='music_player.pause()'>
+          <ion-icon name="pause"></ion-icon>
+        </button>
+        <button ion-button class="playbar-control" (click)='music_player.skipForward()'>
+          <ion-icon name="skip-forward"></ion-icon>
+        </button>
+      </div>
+  </ion-row>
+</ion-footer>

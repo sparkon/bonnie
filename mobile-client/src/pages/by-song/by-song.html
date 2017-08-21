@@ -1,0 +1,20 @@
+<ion-content>
+    <ion-list [virtualScroll]='page.song_views' approxItemHeight='100px' no-lines>
+      <ion-item *virtualItem='let view'>
+        <ion-thumbnail item-start>
+          <img src="{{ view.album_src }}"/>
+        </ion-thumbnail>
+        <ion-row>
+        <ion-col style="padding-top: 8px; border-top: 5px;" (click)="page.onPlay(view, page.eSongOrder.All)" class='overflow-ellipsis'>
+            <h2 float-left class="title">  {{ view.title }} </h2>
+            <h3 float-left class="artist"> {{ view.artist }} - {{ view.album }} </h3>
+          </ion-col>
+        <ion-col class='schedule-control'>
+          <button ion-button icon-only float-right (click)='page.onSchedule($event, view)'>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+</ion-content>
