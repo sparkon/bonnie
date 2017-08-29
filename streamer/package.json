@@ -6,7 +6,6 @@
   "devDependencies": {
     "electron": "^1.7.4",
     "electron-prebuilt": "^1.4.13",
-    "electron-rebuild": "^1.5.11",
     "fs": "0.0.1-security",
     "glob": "^7.1.2",
     "glob-promise": "^3.1.0",

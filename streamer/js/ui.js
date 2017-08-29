@@ -197,11 +197,16 @@ function on_start()
 
     const server_id = $('#name').text()
 
+    $('#state-wait').show()
+
     streamer.start(server_id).then(() =>
     {
         vNotify.success({ text: `Logged as: ${server_id}`})
         $('#start').replaceWith(stop_button)
-        $('#state-label img').prop('src', online_icon).text('Online')
+        $('#state-label img').prop('src', online_icon)
+        $('#state-label span').text('Online')
+        $('#dir-tr-add').hide()
+        $('#state-wait').hide()
     }).catch((err) =>
     {
         vNotify.error({ text: `Start Error: ${err}`})  
@@ -213,10 +218,15 @@ function on_stop()
     started = false
     var start_button = $('<button id="start" onclick="on_start()">START <i class="fa fa-play" aria-hidden="true"></i> </button>')
 
+    $('#state-wait').show()
+
     streamer.stop().then(result => {
         vNotify.success({text: 'Stopped server' })
         $('#stop').replaceWith(start_button)
         $('#state-label img').prop('src', offline_icon).text('Offline')
+        $('#state-label span').text('Offline')
+        $('#dir-tr-add').show()
+        $('#state-wait').hide()
     }).catch(err => {
         vNotify.error({text: `${err}`})
     })
@@ -322,12 +332,14 @@ function on_desc_edit_click() {
 function on_avatar_edit() {
     $('<input type="file"></input>').on('change', e => {
         $('#avatar-wait').show()
+        let avatar = ''
         to_base64(e.target.files[0]).then(result => {
-            streamer.update_avatar(result)
+            avatar = result
+            return streamer.update_avatar(result)
         }).then(result => {
             on_server_info(result)
             $('#avatar-wait').hide()
-            $('#avatar').prop('src', result)
+            $('#avatar').prop('src', avatar)
         }).catch(error => {
             on_server_error(error)
             $('#avatar-wait').hide()

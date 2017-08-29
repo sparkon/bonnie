@@ -22,7 +22,7 @@
                 <table id="files-table" class="files-table">
                     <tbody id="directory-ls">
                         <tr class="dir-tr"><td>
-                            <div class="dir-tr-add" onclick="on_add_directory()">
+                            <div class="dir-tr-add" id="dir-tr-add" onclick="on_add_directory()">
                                 +
                             </div>
                         </td></tr>
@@ -124,10 +124,17 @@
             <div class="right-footer">
                 <div class="foot-net-state">
                     <span class="foot-net-state-h">State:</span>
-                    <span id="state-label" class="foot-net-state-f">Offline<img width="16px" src="https://image.flaticon.com/icons/svg/148/148766.svg"></span>
+                    <span id="state-label" class="foot-net-state-f"><span>Offline</span><img width="16px" src="https://image.flaticon.com/icons/svg/148/148766.svg"></span>
                 </div>
                 <div class="foot-net-set">
                     <button id="start" onclick="on_start()">START <i class="fa fa-play" aria-hidden="true"></i> </button>
+                </div>
+                <div id="state-wait">
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
                 </div>
             </div>
 

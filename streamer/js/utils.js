@@ -21,7 +21,7 @@ function to_base64(blob) {
                 var dataurl = __canvas.toDataURL()
                 resolve(dataurl)
             }
-            img.src = 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png';//URL.createObjectURL(blob);
+            img.src = URL.createObjectURL(blob);
         } catch (e) {
             reject(e)
         }
