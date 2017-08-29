@@ -1,9 +1,9 @@
 # Bonnie
-P2P Streaming Music Platform.  
-co-authored w/ www.github.com/sparkon  
-Commits are [here](https://www.github.com/sparkon/bonnie). This is a mirror.
+Written by:
+- www.github.com/sparkon
+- www.github.com/c4stan
 
-### Components
+P2P Streaming Music Platform.
 - Desktop Client (Streamer) `streamer/`
 - Mobile App (Client) `mobile-client/`
 
